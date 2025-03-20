@@ -20,7 +20,7 @@
 
         <label for="categoria">Categoría</label>
         <input type="text" name="categoria" id="categoria" required>
-
+#comentario
         <button type="submit">Ingresar Película</button>
     </form>
 
