@@ -30,17 +30,10 @@
                     <td>{$dato['Año']}</td>
                     <td>{$dato['Categoria']}</td>
                     <td>
-                        <a href='editar.php?id={$dato['id']}'>
+                        <a href='editar.php?id={$dato['id_peli']}'>
                             <button>Editar</button>
                         </a>
-                        <a href='eliminar.php?id={$dato['id']}'>
-                            <button>Borrar</button>
-                        </a>
-                    <td>
-                        <a href='editar.php?id={$dato['id']}'>
-                            <button>Editar</button>
-                        </a>
-                        <a href='eliminar.php?id={$dato['id']}'>
+                        <a href='eliminar.php?id={$dato['id_peli']}'>
                             <button>Borrar</button>
                         </a>
                     </td>

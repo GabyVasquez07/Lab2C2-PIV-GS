@@ -32,8 +32,8 @@
             $año = $_POST["año"];
             $categoria = $_POST["categoria"];
 
-            $insercion = $conn->prepare("INSERT INTO pelis (titulo, director, año, categoria) VALUES (?, ?, ?, ?)");
-            $insercion->bind_param("sis", $titulo, $director, $año, $categoria);
+            $insercion = $conexion->prepare("INSERT INTO pelis (titulo, director, año, categoria) VALUES (?, ?, ?, ?)");
+            $insercion->bind_param("ssss", $titulo, $director, $año, $categoria);
 
             if ($insercion->execute()) {
                 header("Location: index.php"); 

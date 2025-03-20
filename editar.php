@@ -2,8 +2,8 @@
 
     $id = $_GET["id"];
     $resultado = $conexion->query("SELECT * FROM pelis 
-                    WHERE id=$id"); 
-    $paciente = $resultado->fetch_assoc(); 
+                    WHERE id_peli=$id"); 
+    $titulo = $resultado->fetch_assoc(); 
 ?>
 
 <!DOCTYPE html>
@@ -16,27 +16,33 @@
 <body>
     <form action="" method="post">
         <label for="">Titulo</label>
-        <input type="text" name="nom" id="" 
-        value="<?php echo $paciente["nombre"]?>">
-        <label for="">Fecha de la consulta</label>
-        <input type="date" name="fec" id=""
-        value="<?php echo $paciente["fconsult"]?>">
-        <label for="">Motivo de la consulta</label>
-        <textarea name="mot" id=""><?php echo $paciente["mconsult"]?></textarea>
+        <input type="text" name="titulo" id="" 
+        value="<?php echo $titulo["Titulo"]?>">
+        <label for="">Director</label>
+        <input type="text" name="director" id=""
+        value="<?php echo $titulo["Director"]?>">
+        <label for="">Año</label>
+        <input type="date" name="año" id=""
+        value="<?php echo $titulo["Año"]?>">
+        <label for="">Categoria</label>
+        <input type="text" name="categoria" id=""
+        value="<?php echo $titulo["Categoria"]?>">
         <button type="submit">Ingresar datos</button>
     </form>
 
     <?php 
         if($_SERVER['REQUEST_METHOD']=="POST"){
-            $nombre = $_POST["nom"];
-            $fecha = $_POST["fec"];
-            $motivo = $_POST["mot"];
+            $titulo = $_POST["titulo"];
+            $director = $_POST["director"];
+            $año = $_POST["año"];
+            $categoria = $_POST["categoria"];
+
 
             $actualizacion = $conexion->prepare("UPDATE 
-            tblpacientes SET nombre=?, fconsult=?,mconsult=?
-            WHERE id=$id");
-            $actualizacion->bind_param("sss", 
-            $nombre, $fecha, $motivo);
+            pelis SET Titulo=?, Director=?,Año=?, Categoria=?
+            WHERE id_peli=$id");
+            $actualizacion->bind_param("ssss", 
+            $titulo, $director, $año, $categoria);
             $actualizacion->execute();
             header("Location:index.php");
         }
