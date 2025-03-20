@@ -12,19 +12,16 @@
         <label for="titulo">Título</label>
         <input type="text" name="titulo" id="titulo" required>
         
-<<<<<<< HEAD
-        
-=======
-        <label for="director">Título</label>
+        <label for="director">Director</label>
         <input type="text" name="director" id="director" required>
 
->>>>>>> cd8206b75efec9bb7741b52b40d628eb074ff582
+
         <label for="año">Año</label>
         <input type="date" name="año" id="año" required>
 
         <label for="categoria">Categoría</label>
         <input type="text" name="categoria" id="categoria" required>
-#comentario
+
         <button type="submit">Ingresar Película</button>
     </form>
 
