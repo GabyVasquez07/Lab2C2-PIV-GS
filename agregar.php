@@ -12,6 +12,9 @@
         <label for="titulo">Título</label>
         <input type="text" name="titulo" id="titulo" required>
         
+        <label for="director">Título</label>
+        <input type="text" name="director" id="director" required>
+
         <label for="año">Año</label>
         <input type="number" name="año" id="año" required>
 
@@ -24,11 +27,12 @@
     <?php 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $titulo = $_POST["titulo"];
+            $director = $_POST["director"];
             $año = $_POST["año"];
             $categoria = $_POST["categoria"];
 
-            $insercion = $conn->prepare("INSERT INTO pelis (titulo, año, categoria) VALUES (?, ?, ?)");
-            $insercion->bind_param("sis", $titulo, $año, $categoria);
+            $insercion = $conn->prepare("INSERT INTO pelis (titulo, director, año, categoria) VALUES (?, ?, ?, ?)");
+            $insercion->bind_param("sis", $titulo, $director, $año, $categoria);
 
             if ($insercion->execute()) {
                 header("Location: index.php"); 
