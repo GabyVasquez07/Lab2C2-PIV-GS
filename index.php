@@ -11,22 +11,31 @@
     <a href="agregar.php"><button type="button">Agregar nueva pelicula</button></a>
     <h2>Listado de Peliculas</h2>
     <?php 
-        $listado = $conexion->query("SELECT * FROM plelis");
+        $listado = $conexion->query("SELECT * FROM pelis");
 
         echo "<table>
                     <thead>
                         <tr>
-                            <th>Nombre completo</th>
-                            <th>Fecha de consulta</th>
-                            <th>Motivo de la consulta</th>
+                            <th>Titulo</th>
+                            <th>Director</th>
+                            <th>Año</th>
+                            <th>Categoria</th>
                         </tr>
                     </thead>
                     <tbody>";
         while ($dato = $listado->fetch_assoc()){
             echo "<tr>
-                    <td>{$dato['nombre']}</td>
-                    <td>{$dato['fconsult']}</td>
-                    <td>{$dato['mconsult']}</td>
+                    <td>{$dato['Titulo']}</td>
+                    <td>{$dato['Director']}</td>
+                    <td>{$dato['Año']}</td>
+                    <td>{$dato['Categoria']}</td>
+                    <td>
+                        <a href='editar.php?id={$dato['id']}'>
+                            <button>Editar</button>
+                        </a>
+                        <a href='eliminar.php?id={$dato['id']}'>
+                            <button>Borrar</button>
+                        </a>
                     <td>
                         <a href='editar.php?id={$dato['id']}'>
                             <button>Editar</button>

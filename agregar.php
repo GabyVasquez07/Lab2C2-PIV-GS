@@ -12,8 +12,9 @@
         <label for="titulo">Título</label>
         <input type="text" name="titulo" id="titulo" required>
         
+        
         <label for="año">Año</label>
-        <input type="number" name="año" id="año" required>
+        <input type="date" name="año" id="año" required>
 
         <label for="categoria">Categoría</label>
         <input type="text" name="categoria" id="categoria" required>

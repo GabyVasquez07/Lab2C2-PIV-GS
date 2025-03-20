@@ -6,6 +6,6 @@
         echo "Error: ".mysqli_connect_error();
     }
     else{
-        echo "Conexion realizada exitosamente";
+        /*echo "Conexion realizada exitosamente";*/
     }
 ?>
